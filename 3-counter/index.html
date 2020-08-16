@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://unpkg.com/vue"></script>
+    <title>Vue Demo</title>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="increase(5, $event)">Increase</button>
+        <button v-on:click="counter = counter + 3">Increase (inline)</button>
+        <button v-on:click="reset">Reset</button>
+        <p>{{ counter }}</p> 
+        <p>{{ counter > 10 ? 'greater than 20' : 'lower than or equal to 10' }}</p> 
+        <p v-on:mousemove="updateCoordinates">
+            X: {{ x }}  Y: {{ y }}
+            <span v-on:mousemove.stop=""> - DEAD SPOT</span>
+        </p>
+        <input type="text" v-on:keyup.enter.space="alertMe">
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
