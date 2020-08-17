@@ -20,19 +20,19 @@
     </div>
     <!-- 4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes -->
     <div>
-      <input type="text">
-      <input type="text">
-      <div></div>
+      <input type="text" placeholder="class name" @keyup="selectedClass3 = $event.target.value">
+      <input type="text" placeholder="true/false" v-model="activateClass3">
+      <div v-if="activateClass3 === 'true'" :class="selectedClass3"></div>
     </div>
     <!-- 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.  -->
     <div>
-      <input type="text">
-      <div></div>
+      <input type="text" v-model="selectedColor">
+      <div id="effect" :style="myStyle"></div>
     </div>
     <!-- 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. -->
     <div>
-      <button>Start Progress</button>
-      <div></div>
+      <button @click="startProgress()">Start Progress</button>
+      <div class="box" :style="{width:barLen + 'px'}"></div>
     </div>
   </div>
   <script src="app.js"></script>

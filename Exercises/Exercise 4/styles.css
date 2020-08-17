@@ -21,3 +21,10 @@
 .b {
   border: 5px solid green;
 }
+
+.box {
+  width: 0px;
+  height: 25px;
+  border: 1px solid red;
+  background-color: greenyellow;
+}
