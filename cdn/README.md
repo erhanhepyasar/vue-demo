@@ -1,1 +1,2 @@
-Vue.js Examples and Exercises
+Vue.js Examples
+Exercises
