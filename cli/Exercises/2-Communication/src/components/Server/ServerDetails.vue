@@ -1,24 +1,26 @@
 <template>
     <div class="col-xs-12 col-sm-6">
-        <p v-if="server">Server#{{ server.id }} - {{ server.status }}</p>
+        <p v-if="server">Server#{{ server.id }} selected, Status: {{ server.status }}</p>
         <p v-else>Server Details are currently not updated</p>
-        <button @click="reset">Reset</button>
+        <hr>
+        <button @click="resetStatus">Reset Status</button>
     </div>
 
 </template>
 
 <script>
-    import { eventBus } from '../../main'; 
+    import { serverBus } from '../../main'; 
 
     export default {
         props: ['server'],
         methods: {
-            reset() { 
-                eventBus.$emit('resetClicked', this.server.id)
+            resetStatus() { 
+                // serverBus.$emit('resetStatusClicked', this.server.id)
+                this.server.status = 'Normal'  // server is an object which is passed by reference so changes made here effects original memory area
             }
         },
         created() {
-            eventBus.$on('showDetailsClicked', (server) => {
+            serverBus.$on('serverSelected', (server) => {
                 this.server = server;
             })
         }

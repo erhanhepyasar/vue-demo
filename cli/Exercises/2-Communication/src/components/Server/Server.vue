@@ -1,18 +1,19 @@
 <template>
     <li class="list-group-item"  
-        @click="showDetails">
+        @click="serverSelected"
+        style="cursor: pointer">
         Server #{{ server.id }}
     </li>
 </template>
 
 <script>
-    import { eventBus } from '../../main'
+    import { serverBus } from '../../main'
 
     export default {
         props: ['server'],
         methods: {
-            showDetails(server) {
-                eventBus.$emit('showDetailsClicked', this.server)
+            serverSelected() {
+                serverBus.$emit('serverSelected', this.server)
             }
         },     
     }

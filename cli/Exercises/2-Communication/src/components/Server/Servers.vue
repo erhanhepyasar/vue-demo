@@ -10,7 +10,7 @@
 <script>
     import Server from './Server.vue'
     import ServerDetails from './ServerDetails.vue'
-    import { eventBus } from '../../main'
+    import { serverBus } from '../../main'
 
     export default {
         components: {
@@ -28,11 +28,11 @@
             }
         },
 
-        created() {
-            eventBus.$on('resetClicked', (serverId) => {
-                this.servers[serverId - 1].status = 'Normal';
-            })
-        }
+        // created() {
+        //     serverBus.$on('resetStatusClicked', (serverId) => {
+        //         this.servers[serverId - 1].status = 'Normal';
+        //     })
+        // }
     }
 </script>
 
