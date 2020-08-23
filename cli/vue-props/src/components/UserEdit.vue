@@ -17,7 +17,7 @@
                 this.userAge = 30;
                 // this.$emit('ageWasEdited', this.userAge) // emit custom event
                 // eventBus.$emit('ageWasEdited', this.userAge) // emit with event bus instance
-                eventBus.changeAge(this.userAge)
+                eventBus.changeAge(this.userAge) // call method in the event bus instance
             }
         }
     }
