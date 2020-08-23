@@ -13,7 +13,7 @@
     export default {
         props: ['server'],
         methods: {
-            reset() {
+            reset() { 
                 eventBus.$emit('resetClicked', this.server.id)
             }
         },
