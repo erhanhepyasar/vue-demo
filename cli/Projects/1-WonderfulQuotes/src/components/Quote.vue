@@ -1,23 +1,11 @@
 <template>
-
-    <div class="box" @click="quoteClicked">
-        {{ quote.text }} 
-    </div>
-  
+    <div class="row box">
+        <slot></slot>
+    </div>  
 </template>
 
 <script>
-    import { quoteBus } from '../main'
 
-    export default {
-        props: ['quote'],
-        methods: {
-            quoteClicked() {
-                quoteBus.$emit('quoteClicked', this.quote.id)
-            }
-        }
-        
-    }
 </script>
 
 <style scoped>
@@ -26,7 +14,7 @@
         border-radius: 3px;
         height: 80px;
         width: 300px;
-        font-family: 'Arizona';
+        font-family: 'Arizonia';
         font-size: 24px;
         text-shadow: 4px 4px 4px #aaa;
         cursor: pointer;    
@@ -36,6 +24,6 @@
         padding-left: 5px;
     }
     .box:hover {
-        background-color: pink;
+        background-color: lightpink;
     }
 </style>

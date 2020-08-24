@@ -1,34 +1,22 @@
 <template>
     <div class="row">        
-            <app-quote v-for="quote in quotes" :quote="quote"></app-quote>        
+            <app-quote v-for="(quote, index) in quotes" @click.native="deleteQuote(index)">{{ quote }}</app-quote>        
     </div>
 </template>
 
 <script>
     import Quote from './Quote.vue'
-    import { quoteBus } from '../main';
+
 
     export default {
+        props: ['quotes'],
         components: {
             appQuote: Quote
         },
-        data: function() {
-            return {
-                quotes: [
-                    {id: 0, text:'Just a Quote to start with something!'}
-                ]
+        methods: {
+            deleteQuote(index) {
+                this.$emit('quoteDeleted', index)
             }
-        },
-        created() {
-            quoteBus.$on('addQuoteClicked', (newQuote) => {
-                this.quotes.push({id:this.quotes.length, text: newQuote})
-            });
-
-             quoteBus.$on('quoteClicked', (quoteId) => {
-                 if(this.quotes.length > 1) {
-                     this.quotes.splice(quoteId, 1)
-                 }
-            })
         }
         
     }
