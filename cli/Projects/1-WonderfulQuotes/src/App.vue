@@ -1,9 +1,11 @@
 <template>
     <div class="container">
-        <app-header-bar></app-header-bar>
-        <app-quote-entry></app-quote-entry>
-        <app-quotes></app-quotes>
-        <app-footer></app-footer>
+        <div class="row">
+            <app-header-bar></app-header-bar>
+            <app-quote-entry></app-quote-entry>
+            <app-quotes></app-quotes>
+            <app-footer></app-footer>
+        </div>
     </div>
 </template>
 
@@ -24,4 +26,5 @@
 </script>
 
 <style>
+
 </style>

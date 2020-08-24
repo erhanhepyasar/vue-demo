@@ -1,6 +1,6 @@
 <template>
-    <div class="alert alert-info text-center">
-        <div>Info: Click on a Quote to delete it</div>
+    <div class="row">
+        <div class="alert alert-info text-center">Info: Click on a Quote to delete it</div>
     </div>
 </template>
 

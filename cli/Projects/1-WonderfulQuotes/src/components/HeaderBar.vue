@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div>
         <h3>Quotes Added</h3>
         <div class="outer-bar">
             <div class="inner-bar" :style="{width: 10 * totalQuote + '%'}">
@@ -10,11 +10,25 @@
 </template>
 
 <script>
+    import { quoteBus } from '../main';
+    
     export default {
         data: function() {
             return {
                 totalQuote: 1
             }
+        },
+
+        created() {
+            quoteBus.$on('addQuoteClicked', () =>{
+                this.totalQuote++;
+            }),
+
+            quoteBus.$on('quoteClicked', () =>{
+                if(this.totalQuote > 1) {
+                    this.totalQuote--;
+                }
+            })
         }
     }
 </script>
@@ -33,5 +47,6 @@
         color: white;
         text-align: center;
     }
+    
 
 </style>
