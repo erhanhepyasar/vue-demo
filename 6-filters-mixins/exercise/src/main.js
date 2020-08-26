@@ -1,9 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-Vue.filter('to-lowercase', function(value) {
+Vue.filter('to-lowercase', value => {
     return value.toLowerCase();
 });
+
+Vue.filter('add-letter-count', value => {
+    return value + value.length;
+})
 
 Vue.mixin({
     created() {
