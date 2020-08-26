@@ -6,7 +6,6 @@
                 <!-- Exercise -->
                 <!-- Build a Custom Directive which works like v-on (Listen for Events) -->
                 <p v-myon:click="">Demo</p>
-
             </div>
         </div>
     </div>
