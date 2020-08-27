@@ -13,6 +13,11 @@ const router = new VueRouter({
   //web-pack was already configured so
 });
 
+router.beforeEach((to, from, next) => {
+  console.log('global beforeEach')
+  next(); //false, '/path'
+});
+
 new Vue({
   el: '#app',
   router,
